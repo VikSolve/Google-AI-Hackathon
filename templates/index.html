@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- CSS Variables for easy themeing (Light Mode Default) --- */
         :root {
             --primary-color: #4A90E2;
             --primary-hover-color: #357ABD;
@@ -27,7 +26,7 @@
             --border-radius: 12px;
             --input-focus-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
             --placeholder-color: #B0B0B0;
-            --header-bg-color: #FFFFFF; /* New variable for header background */
+            --header-bg-color: #FFFFFF;
             --nav-button-color: #555;
             --nav-button-hover-bg: #E0E0E0;
             --background-gradient-start: #fbfbfb;
@@ -36,30 +35,28 @@
             --card-gradient-end: #F8F8F8;
         }
 
-        /* --- Dark Mode Variables --- */
         body.dark-mode {
-            --primary-color: #64B5F6; /* Lighter blue for contrast */
+            --primary-color: #64B5F6;
             --primary-hover-color: #42A5F5;
-            --secondary-color: #1A202C; /* Dark background */
-            --text-color: #E2E8F0; /* Light text */
-            --light-text-color: #A0AEC0; /* Lighter grey text */
-            --border-color: #4A5568; /* Darker border */
-            --card-bg-color: #2D3748; /* Dark card background */
-            --success-color: #69F0AE; /* Brighter green */
-            --error-color: #EF5350; /* Brighter red */
+            --secondary-color: #1A202C;
+            --text-color: #E2E8F0;
+            --light-text-color: #A0AEC0;
+            --border-color: #4A5568;
+            --card-bg-color: #2D3748;
+            --success-color: #69F0AE;
+            --error-color: #EF5350;
             --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             --input-focus-shadow: 0 0 0 3px rgba(100, 181, 246, 0.3);
             --placeholder-color: #718096;
-            --header-bg-color: #202631; /* Darker background for header */
+            --header-bg-color: #202631;
             --nav-button-color: #E2E8F0;
             --nav-button-hover-bg: #4A5568;
             --background-gradient-start: #1a202c;
             --background-gradient-end: #2d3748;
             --card-gradient-start: #2D3748;
-            --card-gradient-end: #252D3A; /* slightly darker for a subtle effect */
+            --card-gradient-end: #252D3A;
         }
 
-        /* --- General Styles --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -71,16 +68,15 @@
             background: linear-gradient(to bottom right, var(--background-gradient-start), var(--background-gradient-end));
             color: var(--text-color);
             display: flex;
-            flex-direction: column; /* Changed to column to stack header and main content */
+            flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-            padding: 0; /* Removed padding here, header will handle its own */
-            transition: background 0.5s ease, color 0.3s ease; /* Smooth transition for gradient */
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            padding: 0;
+            transition: background 0.5s ease, color 0.3s ease;
+            scroll-behavior: smooth;
         }
 
-        /* --- Top Header for Navigation and Theme Switch --- */
         .app-top-header {
             width: 100%;
             background-color: var(--header-bg-color);
@@ -89,9 +85,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            gap: 20px; /* Gap between nav and switcher */
-            margin-bottom: 30px; /* Space between header and main content */
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -112,30 +108,27 @@
 
         .nav-button:hover {
             background-color: var(--nav-button-hover-bg);
-            color: var(--primary-color); /* Primary color on hover for text */
+            color: var(--primary-color);
         }
 
 
-        /* --- Main Layout --- */
         .container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 30px;
             width: 100%;
             max-width: 1400px;
-            padding: 0 20px 40px; /* Add padding to container now */
+            padding: 0 20px 40px;
         }
 
-        /* --- Card Style --- */
         .card {
-            background: linear-gradient(to bottom right, var(--card-gradient-start), var(--card-gradient-end)); /* Added gradient to cards */
+            background: linear-gradient(to bottom right, var(--card-gradient-start), var(--card-gradient-end));
             border-radius: var(--border-radius);
             box-shadow: var(--card-shadow);
             padding: 30px;
             transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* --- Header and Logo --- */
         .app-header {
             display: flex;
             align-items: center;
@@ -181,7 +174,6 @@
             color: var(--primary-color);
         }
 
-        /* --- Input Panel (Left Side) --- */
         .input-panel .subtitle {
             font-size: 16px;
             color: var(--light-text-color);
@@ -213,7 +205,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             color: var(--text-color);
-            background-color: var(--card-bg-color); /* Kept solid for input background for clarity */
+            background-color: var(--card-bg-color);
             transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
         }
 
@@ -229,7 +221,6 @@
             box-shadow: var(--input-focus-shadow);
         }
 
-        /* Custom File Input */
         .file-input-wrapper {
             position: relative;
             overflow: hidden;
@@ -270,7 +261,6 @@
         }
 
 
-        /* --- Submit Button --- */
         .submit-button {
             width: 100%;
             padding: 15px;
@@ -301,7 +291,6 @@
             box-shadow: none;
         }
 
-        /* Spinner animation */
         .spinner {
             width: 20px;
             height: 20px;
@@ -322,15 +311,14 @@
         }
 
 
-        /* --- Output Panel (Right Side) --- */
         .output-panel {
             display: flex;
             flex-direction: column;
-            min-height: 400px; /* Ensure a minimum height for the output panel */
+            min-height: 400px;
         }
 
         #output-placeholder {
-            flex-grow: 1; /* Allows it to take up available space */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -375,8 +363,8 @@
         }
 
         #output-results {
-            flex-grow: 1; /* Allows it to take up available space */
-            padding-top: 10px; /* Adjust padding if needed */
+            flex-grow: 1;
+            padding-top: 10px;
         }
 
         #output-results h2 {
@@ -429,7 +417,7 @@
         }
 
         .progress-bar-fill {
-            width: 0; /* Updated by JS */
+            width: 0;
             height: 100%;
             background: linear-gradient(to right, var(--success-color), #20c997);
             border-radius: 10px;
@@ -468,9 +456,9 @@
         }
 
         .result-section ul li i {
-            margin-right: 0; /* Adjusted for gap */
+            margin-right: 0;
             font-size: 18px;
-            flex-shrink: 0; /* Prevent icon from shrinking */
+            flex-shrink: 0;
         }
 
         .fa-check-circle {
@@ -482,21 +470,19 @@
         }
 
         .fa-lightbulb {
-            color: #FFD700; /* Gold-like color */
+            color: #FFD700;
         }
 
         .fa-cogs {
-            color: #8A2BE2; /* BlueViolet */
+            color: #8A2BE2;
         }
 
-        /* --- Theme Toggle Switch --- */
         .theme-switch-wrapper {
             display: flex;
             align-items: center;
             gap: 10px;
             color: var(--text-color);
             font-size: 14px;
-            /* Removed absolute positioning as it's now in the header */
         }
 
         .theme-switch {
@@ -542,7 +528,6 @@
             transform: translateX(26px);
         }
 
-        /* Responsive icons inside slider */
         .slider .fa-sun, .slider .fa-moon {
             position: absolute;
             top: 50%;
@@ -568,13 +553,12 @@
             opacity: 1;
         }
 
-        /* --- About Us Section --- */
         .about-us-section {
             width: 100%;
             max-width: 1400px;
             padding: 60px 40px;
             margin-top: 50px;
-            background: linear-gradient(to top left, var(--card-bg-color), var(--secondary-color)); /* Gradient background for section */
+            background: linear-gradient(to top left, var(--card-bg-color), var(--secondary-color));
             border-radius: var(--border-radius);
             box-shadow: var(--card-shadow);
             text-align: center;
@@ -618,7 +602,7 @@
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
         body.dark-mode .about-us-section ul li {
-            background-color: var(--border-color); /* Lighter dark for list items */
+            background-color: var(--border-color);
         }
 
         .about-us-section ul li:hover {
@@ -627,7 +611,6 @@
         }
 
 
-        /* --- Responsive Design --- */
         @media (max-width: 992px) {
             .app-top-header {
                 flex-direction: column;
@@ -640,12 +623,12 @@
             }
             .container {
                 grid-template-columns: 1fr;
-                padding: 0 10px 20px; /* Adjust padding for smaller screens */
+                padding: 0 10px 20px;
             }
 
             .theme-switch-wrapper {
-                position: static; /* Position normally within flow */
-                margin-top: 0; /* No extra margin needed here */
+                position: static;
+                margin-top: 0;
                 justify-content: center;
             }
             .about-us-section {
@@ -704,7 +687,7 @@
         }
     </style>
 </head>
-<body class="dark-mode"> <!-- Default to dark mode -->
+<body class="dark-mode"> 
     <header class="app-top-header">
         <nav class="main-nav">
             <a href="#" class="nav-button">Log In</a>
@@ -729,7 +712,6 @@
         <div class="card input-panel">
             <div class="app-header">
                 <div class="logo-icon">
-                    <!-- SVG for logo, representing a CV and an AI brain/chip -->
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L6 5V19L12 22L18 19V5L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M12 2V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -806,25 +788,21 @@
                 <div class="result-section">
                     <h3><i class="fa-solid fa-award"></i>Key Takeaways</h3>
                     <ul id="takeaways-list">
-                        <!-- Dynamically populated -->
                     </ul>
                 </div>
 
                 <div class="result-section">
                     <h3><i class="fa-solid fa-lightbulb"></i>CV Improvement Tips</h3>
                     <ul id="tips-list">
-                        <!-- Dynamically populated -->
                     </ul>
                 </div>
 
                 <div class="result-section">
                     <h3><i class="fa-solid fa-cogs"></i>Suggested Projects for Your Portfolio</h3>
                     <ul id="projects-list">
-                        <!-- Dynamically populated -->
                     </ul>
                 </div>
             </div>
-            <!-- Message box for alerts -->
             <div id="messageBox" class="hidden" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: var(--card-bg-color); padding: 25px; border-radius: var(--border-radius); box-shadow: var(--card-shadow); z-index: 1000; text-align: center; max-width: 350px; width: 90%; border: 1px solid var(--border-color);">
                 <p id="messageBoxText" style="margin-bottom: 20px; font-size: 16px; color: var(--text-color);"></p>
                 <button id="messageBoxClose" style="background-color: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">OK</button>
@@ -847,7 +825,6 @@
     </section>
 
     <script>
-    // --- Get DOM Elements ---
     const form = document.getElementById('cvmatchForm');
     const runButton = document.getElementById('runButton');
     const buttonText = document.getElementById('buttonText');
@@ -863,7 +840,6 @@
     const outputLoading = document.getElementById('output-loading');
     const outputResults = document.getElementById('output-results');
 
-    // --- Logic for file input label ---
     cvUploadInput.addEventListener('change', () => {
         if (cvUploadInput.files.length > 0) {
             fileNameDisplay.textContent = cvUploadInput.files[0].name;
@@ -874,15 +850,12 @@
         }
     });
 
-    // --- Main "Run" Button Logic ---
     runButton.addEventListener('click', async () => {
-      // Basic validation
       if (!form.checkValidity()) {
         alert('Please fill in all required fields (Job Offer Link and CV).');
         return;
       }
       
-      // 1. Show Loading State
       setLoadingState(true);
 
       const formData = new FormData();
@@ -894,17 +867,9 @@
         body: formData}
       );
 
-      // 2. TODO: Here is where you will:
-      //    a. Get all the data from the form (links, file, prompt).
-      //    b. Use FormData to package it.
-      //    c. Send it to your backend endpoint (e.g., using fetch API).
-      //    d. Your backend will then call the Gemini API.
-      //    e. Wait for the response from your backend.
       response = await response.json(); 
-      console.log(response)// Assuming your backend returns JSON
-      // 3. For now, we'll just SIMULATE a 3-second API call.
+      console.log(response)
       setTimeout(() => {
-        // This is where you would use the real data from Gemini
         const mockData = {
           matchPercentage: parseInt(response.matchPercentage),
           takeaways: [
@@ -920,50 +885,49 @@
         
         displayResults(mockData);
         setLoadingState(false);
-      }); // Simulate 3 second delay
+      });
     });
 
     function setLoadingState(isLoading) {
       if (isLoading) {
-        // Disable form
+
         runButton.disabled = true;
         allInputs.forEach(input => input.disabled = true);
         
-        // Update button
+
         buttonText.classList.add('hidden');
         spinner.classList.remove('hidden');
         
-        // Update output panel
+
         outputPlaceholder.classList.add('hidden');
         outputResults.classList.add('hidden');
         outputLoading.classList.remove('hidden');
       } else {
-        // Enable form
+
         runButton.disabled = false;
         allInputs.forEach(input => input.disabled = false);
         
-        // Update button
+
         spinner.classList.add('hidden');
         buttonText.classList.remove('hidden');
         
-        // Update output panel
+
         outputLoading.classList.add('hidden');
         outputResults.classList.remove('hidden');
       }
     }
     
     function displayResults(data) {
-        // --- Populate Match Score ---
+
         const percentageEl = document.getElementById('match-percentage');
         const progressFillEl = document.getElementById('progress-fill');
         
         percentageEl.textContent = `${data.matchPercentage}%`;
-        // Animate the progress bar fill
+
         setTimeout(() => {
            progressFillEl.style.width = `${data.matchPercentage}%`;
-        }, 100); // Small delay to ensure transition is applied
+        }, 100);
 
-        // --- Populate Lists ---
         populateList('takeaways-list', data.takeaways, 'fa-solid fa-award');
         populateList('tips-list', data.tips, 'fa-solid fa-lightbulb');
         populateList('projects-list', data.projects, 'fa-solid fa-cogs');
@@ -971,7 +935,7 @@
     
     function populateList(elementId, items, iconClass) {
         const listEl = document.getElementById(elementId);
-        listEl.innerHTML = ''; // Clear previous results
+        listEl.innerHTML = '';
         items.forEach(itemText => {
             const li = document.createElement('li');
             li.innerHTML = `<i class="${iconClass}"></i><span>${itemText}</span>`;
@@ -981,4 +945,5 @@
 
   </script>
 </body>
+
 </html>
